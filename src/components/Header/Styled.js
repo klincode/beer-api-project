@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Header = styled.header`
-height:15vh;
+height:25vh;
 display:flex;
 align-items:center;
 `

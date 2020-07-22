@@ -1,7 +1,18 @@
 import styled from 'styled-components';
+import { breakPoint } from '../../theme/breakPoints'
+
+const ImageWrapper = styled.div`
+  padding:5px;
+  height:250px;
+  @media ${breakPoint.mediumDevice} {
+    height:350px;
+  }
+`;
 
 const Image = styled.img`
-max-width:90%;
+max-width:100%;
+height:100%;
+object-fit:cover;
 `;
 const Info = styled.p`
 position:absolute;
@@ -39,11 +50,16 @@ const Card = styled.div`
     box-shadow:0 0 9px -2px ${props => props.theme.shadow};
     transform:scale(1.05)
   }
+
+  @media ${breakPoint.mediumDevice} {
+    width:100%;
+    min-height:450px;
+  }
 `
 
 
 const Styled = {
-  Image, Subtitle, Title, Card, Info
+  Image, Subtitle, Title, Card, Info, ImageWrapper
 }
 
 export default Styled;

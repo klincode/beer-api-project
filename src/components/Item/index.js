@@ -5,7 +5,9 @@ const Item = () => {
   return (
     <>
       <Styled.Card>
-        <Styled.Image src={img} />
+        <Styled.ImageWrapper>
+          <Styled.Image src={img} />
+        </Styled.ImageWrapper>
         <Styled.Info>
           <Styled.Title>Buzz</Styled.Title>
           <Styled.Subtitle>A real bitter experience</Styled.Subtitle>

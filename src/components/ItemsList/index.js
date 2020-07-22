@@ -3,22 +3,12 @@ import Styled from './Styled'
 import React from 'react';
 
 
-const ItemsList = () => {
+const ItemsList = ({ data }) => {
   return (
     <Styled.ItemsList>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      {data.map((item, index) => {
+        return <Item key={index} data={item} />
+      })}
     </Styled.ItemsList>
   )
 }

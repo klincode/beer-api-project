@@ -7,14 +7,14 @@ const ImageWrapper = styled.div`
   @media ${breakPoint.mediumDevice} {
     height:350px;
   }
-`;
+  `;
 
 const Image = styled.img`
 max-width:100%;
 height:100%;
 object-fit:cover;
 `;
-const Info = styled.p`
+const Info = styled.div`
 position:absolute;
 bottom:10px;
 left:50%;
@@ -39,7 +39,7 @@ const Card = styled.div`
   position:relative;
   flex-basis:30%;
   border-radius:5px;
-  min-height:350px;
+  min-height:380px;
   padding:10px 20px;
   margin-bottom:30px;
   text-align:center;
@@ -47,6 +47,7 @@ const Card = styled.div`
   background-color:${props => props.theme.backgroundItemColor};
   transition:0.3s;
   &:hover{
+    cursor:pointer;
     box-shadow:0 0 9px -2px ${props => props.theme.shadow};
     transform:scale(1.05)
   }

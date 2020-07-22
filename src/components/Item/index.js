@@ -1,16 +1,17 @@
 import Styled from './Styled'
 import React from 'react';
-import img from '../../beer.jpg'
-const Item = () => {
+
+const Item = (props) => {
+  const { image_url, name, tagline } = props.data;
   return (
     <>
       <Styled.Card>
         <Styled.ImageWrapper>
-          <Styled.Image src={img} />
+          <Styled.Image src={image_url} />
         </Styled.ImageWrapper>
         <Styled.Info>
-          <Styled.Title>Buzz</Styled.Title>
-          <Styled.Subtitle>A real bitter experience</Styled.Subtitle>
+          <Styled.Title>{name}</Styled.Title>
+          <Styled.Subtitle>{tagline}</Styled.Subtitle>
         </Styled.Info>
       </Styled.Card>
     </>

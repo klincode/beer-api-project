@@ -1,17 +1,18 @@
-import styled from 'styled-components';
-import { Image } from './Image';
-import { Title } from './Title';
-import { Subtitle } from './Subtitle';
-
-const Item = styled.div`
-  flex-basis:33.333%;
-  padding:10px 10px;
-  box-shadow:0 0 4px -2px ${props => props.theme.shadow};
-  background-color:${props => props.theme.primaryColor};
-
-`
-Item.Image = Image;
-Item.Title = Title;
-Item.Subtitle = Subtitle;
+import Styled from './Styled'
+import React from 'react';
+import img from '../../beer.jpg'
+const Item = () => {
+  return (
+    <>
+      <Styled.Card>
+        <Styled.Image src={img} />
+        <Styled.Info>
+          <Styled.Title>Buzz</Styled.Title>
+          <Styled.Subtitle>A real bitter experience</Styled.Subtitle>
+        </Styled.Info>
+      </Styled.Card>
+    </>
+  )
+}
 
 export default Item;

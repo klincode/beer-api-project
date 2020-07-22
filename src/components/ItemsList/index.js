@@ -1,31 +1,25 @@
-import styled from 'styled-components'
 import Item from '../Item'
+import Styled from './Styled'
+import React from 'react';
 
-const ItemsList = styled.div`
-display: flex;
-flex-wrap:wrap;
-`
 
 const ItemsList = () => {
   return (
-    <ItemsList>
-      <Item>
-        <Item.Image src={img} />
-        <Item.Title>Tytuł</Item.Title>
-        <Item.Subtitle>podtytuł</Item.Subtitle>
-      </Item>
-      <Item>
-        <Item.Image src={img} />
-        <Item.Title>Tytuł</Item.Title>
-        <Item.Subtitle>podtytuł</Item.Subtitle>
-      </Item>
-
-      <Item>
-        <Item.Image src={img} />
-        <Item.Title>Tytuł</Item.Title>
-        <Item.Subtitle>podtytuł</Item.Subtitle>
-      </Item>
-    </ItemsList>
+    <Styled.ItemsList>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+    </Styled.ItemsList>
   )
 }
 export default ItemsList

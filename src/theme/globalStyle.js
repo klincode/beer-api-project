@@ -8,13 +8,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:${props => props.theme.backgroundColor}
 }
 * {
   box-sizing: border-box;
 }
-h1 {
-  color:red;
-}
+
 `;
 
-export default GlobalStyle;
+export default GlobalStyle

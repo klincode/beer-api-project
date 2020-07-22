@@ -1,9 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import GlobalStyle from './theme/globalStyle'
 import { ThemeProvider } from 'styled-components';
-import { themeLight } from './theme/themeLight'
-import Item from './components/Item'
-import ItemsList from './components/ItemsList'
+import { themeLight } from './theme/themeLight';
+
+import { Main } from './GlobalElements'
+
+import ItemsList from './components/ItemsList';
+import Wrapper from './components/Wrapper';
+import Header from './components/Header';
+
 
 
 
@@ -17,9 +22,9 @@ class App extends Component {
         <GlobalStyle />
         <Wrapper>
           <Header />
-          <Content>
+          <Main>
             <ItemsList />
-          </Content>
+          </Main>
         </Wrapper>
       </ThemeProvider >
     );

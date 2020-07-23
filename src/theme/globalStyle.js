@@ -17,3 +17,4 @@ body {
 `;
 
 export default GlobalStyle
+

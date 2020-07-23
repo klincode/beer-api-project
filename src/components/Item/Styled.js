@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { breakPoint } from '../../theme/breakPoints'
-
+import { H2, H3 } from '../../GlobalElements'
 const ImageWrapper = styled.div`
   padding:5px;
   height:250px;
@@ -21,21 +21,14 @@ left:50%;
 transform:translateX(-50%);
 width:100%;
 `
-const Title = styled.h2`
-color: ${props => props.theme.primaryColor};
-margin:0;
-padding:0;
+const Title = styled(H2)`
 `
 
-const Subtitle = styled.p`
-font-size:13px;
-color: ${props => props.theme.textColor};
-margin:0;
-padding:0;
+const Subtitle = styled(H3)`
 `;
 
 
-const Card = styled.div`
+const Item = styled.div`
   position:relative;
   flex-basis:30%;
   border-radius:5px;
@@ -60,7 +53,7 @@ const Card = styled.div`
 
 
 const Styled = {
-  Image, Subtitle, Title, Card, Info, ImageWrapper
+  Image, Subtitle, Title, Item, Info, ImageWrapper
 }
 
 export default Styled;

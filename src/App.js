@@ -8,6 +8,7 @@ import { Main } from './GlobalElements'
 import ItemsList from './components/ItemsList';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
+import Modal from './components/Modal';
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
         <Wrapper>
+          <Modal />
           <Header />
           <Main>
             <ItemsList data={beers} />

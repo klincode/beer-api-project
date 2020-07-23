@@ -5,15 +5,15 @@ const Item = (props) => {
   const { image_url, name, tagline } = props.data;
   return (
     <>
-      <Styled.Card>
+      <Styled.Item>
         <Styled.ImageWrapper>
           <Styled.Image src={image_url} />
         </Styled.ImageWrapper>
         <Styled.Info>
-          <Styled.Title>{name}</Styled.Title>
+          <Styled.Title primary>{name}</Styled.Title>
           <Styled.Subtitle>{tagline}</Styled.Subtitle>
         </Styled.Info>
-      </Styled.Card>
+      </Styled.Item>
     </>
   )
 }

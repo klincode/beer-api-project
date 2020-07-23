@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const H2 = styled.h2`
-font-size:15px;
-color: ${props => props.theme.primaryColor}
+  color: ${props => props.primary ? props.theme.primaryColor : props.theme.secondaryColor};
+  margin: 0;
+  padding: 0;
 `;

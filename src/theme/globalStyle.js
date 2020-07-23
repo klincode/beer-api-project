@@ -8,7 +8,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:${props => props.theme.backgroundColor}
+  background-color:${props => props.theme.backgroundColor};
+  color:${props => props.theme.secondaryColor};
+  font-size:14px;
 }
 * {
   box-sizing: border-box;

@@ -3,7 +3,7 @@ export const themeLight = {
   backgroundItemColor: '#fff',
   textColor: 'silver',
   primaryColor: '#fdc22a',
-  secondaryColor: '#4d4d4d',
+  secondaryColor: '#909090',
   shadow: 'silver'
 }
 

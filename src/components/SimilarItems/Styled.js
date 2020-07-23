@@ -15,21 +15,22 @@ display: flex;
 background-color:pink;
 flex-wrap:wrap;
 width:100%;
-height:25%;
+height:200px;
+/* margin:0 auto; */
 justify-content:space-between;
- 
+align-content: flex-start
 `
 
 const Item = styled.div`
  /* flex: 1 0 100%; */
-  /* height:100%; */
-  
+  height:90%;
+  /* min-height:175px; */
+
   position:relative;
   text-align:center;
   padding:10px;
-  max-height:100%;
   margin:0;
-  flex-basis:30%;
+  flex-basis:25%;
   text-align:center;
   border:1px solid #d9d9d9;
   background-color:${props => props.theme.backgroundItemColor};
@@ -46,10 +47,11 @@ const Header = styled(H4)`
 margin:0;
 /* padding:10px; */
 flex-basis:100%;
-/* height:0px; */
+height:20px;
 /* width:100%; */
-border:1px solid red;
-line-height:1;
+/* border:1px solid red; */
+background-color:pink;
+/* line-height:1; */
 `
 const Styled = {
   Item,

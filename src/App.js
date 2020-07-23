@@ -28,6 +28,9 @@ class App extends Component {
   }
   render() {
     const { beers } = this.state;
+    console.log('====================================');
+    console.log(beers);
+    console.log('====================================');
     return (
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />

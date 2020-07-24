@@ -1,7 +1,7 @@
 import React from 'react';
 import Styled from './Styled'
 import SimilarItems from '../SimilarItems'
-import img from '../../beer.jpg'
+import noimage from '../../img/noimage.jpg'
 import { H4 } from '../../GlobalElements'
 const Modal = ({ hideModal, itemData, showModal }) => {
   const { image_url, ibu, abv, ebc, name, tagline, description, food_pairing } = itemData;
@@ -21,9 +21,9 @@ const Modal = ({ hideModal, itemData, showModal }) => {
   return (
     <Styled.ModalBack onClick={(e) => hideModal(e)}>
       <Styled.ModalFront>
-        <Styled.Image>
-          <img src={image_url} alt="bee" />
-        </Styled.Image>
+        <Styled.ImageWrapper>
+          <Styled.Image src={image_url || noimage} alt="bee" />
+        </Styled.ImageWrapper>
 
         <Styled.Content>
           <Styled.Title>{name}</Styled.Title>

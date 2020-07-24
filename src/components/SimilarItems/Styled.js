@@ -41,14 +41,16 @@ const Title = styled(H4)`
   bottom:10px;
   width:100%;
 `
-const Image = styled.div`
 
-  height:250px;
-  img {
+const ImageWrapper = styled.div`
+height:250px;
+  `;
+
+const Image = styled.img`
     max-width:50%;
     max-height:50%;
     object-fit:cover;
-  }
+  
 `
 const Header = styled(H4)`
 margin:0;
@@ -62,7 +64,8 @@ const Styled = {
   ItemsList,
   Title,
   Header,
-  Image
+  Image,
+  ImageWrapper
 
 }
 

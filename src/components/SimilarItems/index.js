@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import Styled from './Styled'
 import Spinner from '../Spinner'
+import noimage from '../../img/noimage.jpg'
+
 class SimilarItems extends Component {
   constructor(props) {
     super(props);
@@ -30,9 +32,10 @@ class SimilarItems extends Component {
       return (
         <Styled.Item key={index} onClick={() => this.props.showModal(this.state.beers[index])}>
           <Styled.Title>{item.name}</Styled.Title>
-          <Styled.Image>
-            <img src={item.image_url} alt="" />
-          </Styled.Image>
+          <Styled.ImageWrapper>
+            <Styled.Image src={item.image_url || noimage} />
+
+          </Styled.ImageWrapper>
         </Styled.Item>
       )
     })

@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
 const Spinner = styled.div`
-margin:0 auto;
-color:red;
+position:absolute;
+top:50%;
+left:50%;
+
 `
 const Styled = {
   Spinner

@@ -18,7 +18,6 @@ position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-
 max-width:70%;
 min-width:400px;
 min-height:80%;
@@ -26,18 +25,19 @@ z-index:5;
 background-color:#fff;
 box-shadow:0 0 10px -5px ${props => props.theme.shadow};
 align-content:space-between;
+transition:1s;
 `
-const Image = styled.div`
+const ImageWrapper = styled.div`
 flex-basis:30%;
 height:350px;;
+`
+const Image = styled.img`
+max-width:100%;
 
-img{
-    max-width:100%;
-    height:100%;
-    object-fit:cover;
-    margin:0 auto;
-    display:block;
-  }
+max-height:100%;
+object-fit:cover;
+margin:0 auto;
+display:block;
 `
 
 const Content = styled.div`
@@ -101,7 +101,8 @@ const Styled = {
   Features,
   Text,
   FoodList,
-  FoodItem
+  FoodItem,
+  ImageWrapper
 }
 
 export default Styled

@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 15,
+      page: 1,
       scrollPosition: 0,
       isEndOfData: false,
       isLoading: true,

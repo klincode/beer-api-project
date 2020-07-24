@@ -25,14 +25,14 @@ z-index:5;
 background-color:#fff;
 box-shadow:0 0 10px -5px ${props => props.theme.shadow};
 align-content:space-between;
-transition:1s;
+
 `
 const ImageWrapper = styled.div`
 flex-basis:30%;
 height:350px;;
 `
 const Image = styled.img`
-max-width:100%;
+max-width:90%;
 
 max-height:100%;
 object-fit:cover;

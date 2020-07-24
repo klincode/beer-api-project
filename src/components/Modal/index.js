@@ -3,37 +3,45 @@ import Styled from './Styled'
 import SimilarItems from '../SimilarItems'
 import img from '../../beer.jpg'
 import { H4 } from '../../GlobalElements'
-const Modal = () => {
+const Modal = ({ hideModal, itemData }) => {
+  const { image_url, ibu, abv, ebc, name, tagline, description, food_pairing } = itemData;
+
+  const renderFoodList = () => {
+    return food_pairing.map((item, index) => {
+      return <Styled.FoodItem key={index}>{item}</Styled.FoodItem>
+    })
+  }
+
+  const features = {
+    'ibu': ibu,
+    'abv': abv,
+    'ebc': ebc
+  }
+  console.log(itemData);
   return (
-    <Styled.ModalBack>
+    <Styled.ModalBack onClick={(e) => hideModal(e, false)}>
       <Styled.ModalFront>
         <Styled.Image>
-          <img src={img} alt="bee" />
+          <img src={image_url} alt="bee" />
         </Styled.Image>
 
         <Styled.Content>
-          <Styled.Title>trashy blonde</Styled.Title>
-          <Styled.Subtitle>rtret df dfg dfg df g </Styled.Subtitle>
-          <Styled.Volumes>
-            <H4>IBU: <span> 34.1</span></H4>
-            <H4>ABV: <span> 4%</span></H4>
-            <H4>EBC: <span> 15</span></H4>
-          </Styled.Volumes>
+          <Styled.Title>{name}</Styled.Title>
+          <Styled.Subtitle>{tagline}</Styled.Subtitle>
+          <Styled.Features>
+            <H4>IBU: <span>{ibu}</span></H4>
+            <H4>ABV: <span>{abv}</span></H4>
+            <H4>EBC: <span>{ebc}</span></H4>
+          </Styled.Features>
           <Styled.Text>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere non asperiores omnis architecto aperiam, minus ad labore! Exercitationem eum voluptate quae accusantium tempore, nostrum sunt, aut quasi fugit dolorum perferendis consectetur error placeat vero, facere quisquam at unde aliquid dicta cupiditate nemo a. Quis architecto inventore temporibus odio laborum voluptate?
+            {description}
           </Styled.Text>
           <H4>Best served with</H4>
           <Styled.FoodList>
-            <Styled.FoodItem>ryba</Styled.FoodItem>
-            <Styled.FoodItem>czipsy</Styled.FoodItem>
-            <Styled.FoodItem>salami</Styled.FoodItem>
-            <Styled.FoodItem>salami</Styled.FoodItem>
-            <Styled.FoodItem>salami</Styled.FoodItem>
-            <Styled.FoodItem>salami</Styled.FoodItem>
-
+            {renderFoodList()}
           </Styled.FoodList>
         </Styled.Content>
-        <SimilarItems />
+        <SimilarItems features={features} />
       </Styled.ModalFront>
     </Styled.ModalBack>
   )

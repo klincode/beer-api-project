@@ -13,14 +13,15 @@ const ModalFront = styled.div`
 display:flex;
 flex-wrap:wrap;
 border-radius:5px;
-padding:20px;
+padding:20px 20px 20px 0;
 position:fixed;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-width:60%;
-max-width:800px;
-min-height:90%;
+
+max-width:70%;
+min-width:400px;
+min-height:80%;
 z-index:5;
 background-color:#fff;
 box-shadow:0 0 10px -5px ${props => props.theme.shadow};
@@ -28,14 +29,15 @@ align-content:space-between;
 `
 const Image = styled.div`
 flex-basis:30%;
-height:330px;;
-background-color:green;
-  img{
-    
+height:350px;;
+
+img{
+  
     max-width:100%;
     height:100%;
     object-fit:cover;
-    
+    margin:0 auto;
+    display:block;
   }
 `
 
@@ -62,7 +64,7 @@ display:inline-block;
   background:${props => props.theme.primaryColor};
 }
 `
-const Volumes = styled.div`
+const Features = styled.div`
 margin-top:15px;
 display:flex;
 align-items:center;
@@ -74,6 +76,7 @@ span {
 `
 const Text = styled.p`
 margin:0;
+padding-left:10px;
 padding-bottom:10px;
 `
 
@@ -81,6 +84,7 @@ const FoodList = styled.ul`
 list-style:none;
 margin:0;
 padding:0;
+
 `
 const FoodItem = styled.li`
 &::before{
@@ -95,7 +99,7 @@ const Styled = {
   Content,
   Title,
   Subtitle,
-  Volumes,
+  Features,
   Text,
   FoodList,
   FoodItem

@@ -2,10 +2,10 @@ import Styled from './Styled'
 import React from 'react';
 
 const Item = (props) => {
-  const { image_url, name, tagline } = props.data;
+  const { data: { image_url, name, tagline }, showModal } = props;
   return (
     <>
-      <Styled.Item>
+      <Styled.Item onClick={() => showModal(props.data)}>
         <Styled.ImageWrapper>
           <Styled.Image src={image_url} />
         </Styled.ImageWrapper>

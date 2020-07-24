@@ -15,11 +15,29 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      isModalVisible: false,
+      itemData: {},
       beers: []
     }
   }
   componentDidMount() {
-    this.getData(1);
+    this.getData(10);
+  }
+
+  setSelectedItemData = (data) => {
+    this.setState({ itemData: data });
+  }
+
+  showModal = (data) => {
+    this.setState({ isModalVisible: true })
+    this.setSelectedItemData(data);
+  }
+
+  hideModal = (e) => {
+    e.stopPropagation();
+    if (e.target === e.currentTarget) {
+      this.setState({ isModalVisible: false })
+    }
   }
   getData = (page) => {
     fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=20`)
@@ -27,18 +45,18 @@ class App extends Component {
       .then(data => this.setState({ beers: data }))
   }
   render() {
-    const { beers } = this.state;
-    console.log('====================================');
-    console.log(beers);
-    console.log('====================================');
+    const { beers, isModalVisible, itemData } = this.state;
+
+
     return (
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
         <Wrapper>
-          <Modal />
+          {isModalVisible ? <Modal hideModal={this.hideModal} itemData={itemData} /> : null}
           <Header />
           <Main>
-            <ItemsList data={beers} />
+            <ItemsList data={beers}
+              showModal={this.showModal} />
           </Main>
         </Wrapper>
       </ThemeProvider >

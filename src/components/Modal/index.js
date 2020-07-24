@@ -3,7 +3,7 @@ import Styled from './Styled'
 import SimilarItems from '../SimilarItems'
 import img from '../../beer.jpg'
 import { H4 } from '../../GlobalElements'
-const Modal = ({ hideModal, itemData }) => {
+const Modal = ({ hideModal, itemData, showModal }) => {
   const { image_url, ibu, abv, ebc, name, tagline, description, food_pairing } = itemData;
 
   const renderFoodList = () => {
@@ -19,7 +19,7 @@ const Modal = ({ hideModal, itemData }) => {
   }
   console.log(itemData);
   return (
-    <Styled.ModalBack onClick={(e) => hideModal(e, false)}>
+    <Styled.ModalBack onClick={(e) => hideModal(e)}>
       <Styled.ModalFront>
         <Styled.Image>
           <img src={image_url} alt="bee" />
@@ -41,7 +41,9 @@ const Modal = ({ hideModal, itemData }) => {
             {renderFoodList()}
           </Styled.FoodList>
         </Styled.Content>
-        <SimilarItems features={features} />
+        <SimilarItems
+          features={features}
+          showModal={showModal} />
       </Styled.ModalFront>
     </Styled.ModalBack>
   )

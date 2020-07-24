@@ -52,7 +52,7 @@ class App extends Component {
       <ThemeProvider theme={themeLight}>
         <GlobalStyle />
         <Wrapper>
-          {isModalVisible ? <Modal hideModal={this.hideModal} itemData={itemData} /> : null}
+          {isModalVisible ? <Modal hideModal={this.hideModal} itemData={itemData} showModal={this.showModal} /> : null}
           <Header />
           <Main>
             <ItemsList data={beers}

@@ -32,7 +32,6 @@ flex-basis:30%;
 height:350px;;
 
 img{
-  
     max-width:100%;
     height:100%;
     object-fit:cover;

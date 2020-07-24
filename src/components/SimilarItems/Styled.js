@@ -26,6 +26,11 @@ const Item = styled.div`
   text-align:center;
   border:1px solid #d9d9d9;
   background-color:${props => props.theme.backgroundItemColor};
+  transition:0.3s;
+  &:hover {
+    transform:scale(1.1);
+    cursor:pointer;
+  }
 `
 const Title = styled(H4)`
   position:absolute;

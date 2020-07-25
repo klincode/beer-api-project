@@ -1,17 +1,16 @@
 import styled from 'styled-components';
-import { breakPoint } from '../../theme/breakPoints'
-const ItemsList = styled.div`
-display: flex;
-flex-wrap:wrap;
-justify-content:space-between;
+import { breakPoints } from '../../GlobalElements/'
 
-@media ${breakPoint.mediumDevice}{
-  flex-direction:column;
+const S = {
+  ItemsList: styled.div`
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+
+    @media ${breakPoints.mediumDevice}{
+      flex-direction:column;
+    }
+`
 }
-`;
 
-
-const Styled = {
-  ItemsList
-}
-export default Styled;
+export default S;

@@ -1,22 +1,23 @@
 import React, { Fragment, Component } from 'react';
-import GlobalStyle from './theme/globalStyle'
+import GlobalStyle from './theme/GlobalStyle'
 import { ThemeProvider } from 'styled-components';
-import { themeLight } from './theme/themeLight';
-
-import { Main, H3 } from './GlobalElements'
-
+import Switch from "react-switch";
+import { themeLight, themeDark } from './theme/Themes';
+import { Main, H3 } from './GlobalElements';
 import ItemsList from './components/ItemsList';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
 import Modal from './components/Modal';
 import Spinner from './components/Spinner';
 import Footer from './components/Footer';
-
+import SwitchControl from './components/Switch';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      theme: themeLight,
+      switchChecked: false,
       page: 1,
       scrollPosition: 0,
       isEndOfData: false,
@@ -30,21 +31,24 @@ class App extends Component {
     this.getData(this.state.page);
     window.addEventListener('scroll', this.infiniteScroll)
   }
-
+  componentWillUnmount() {
+    window.removeEventListener('scroll');
+  }
+  switchHandleChange = (e) => {
+    let theme = '';
+    e ? theme = themeDark : theme = themeLight
+    this.setState({ switchChecked: !this.state.switchChecked, theme });
+  }
   setSelectedItemData = (data) => {
     this.setState({ itemData: data });
   }
-
   showModal = (data) => {
     this.setState({ isModalVisible: true })
     this.setSelectedItemData(data);
   }
-
   infiniteScroll = () => {
     const scroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 
     if ((scroll / height) === 1) {
       this.setState(prevState => {
@@ -53,12 +57,8 @@ class App extends Component {
         )
       })
       this.getData(this.state.page)
-
     }
-    this.setState({ scrollPosition: scroll / height })
-    console.log('page' + this.state.page);
   }
-
   hideModal = (e) => {
     e.stopPropagation();
     if (e.target === e.currentTarget) {
@@ -81,15 +81,20 @@ class App extends Component {
           if (data.length === 0) this.setState({ isEndOfData: true });
         })
     })
-
   }
   render() {
     const { beers, isModalVisible, itemData, isEndOfData, isLoading } = this.state;
-
-    console.log(this.state.scrollPosition);
     return (
-      <ThemeProvider theme={themeLight}>
+      <ThemeProvider
+        theme={this.state.theme}>
         <GlobalStyle />
+        <SwitchControl>
+          <Switch
+            onChange={this.switchHandleChange}
+            checked={this.state.switchChecked}
+            offColor="#0d1e20"
+            onColor="#f5555f" />
+        </SwitchControl>
         <Wrapper>
           {isModalVisible ?
             <Modal
@@ -99,18 +104,18 @@ class App extends Component {
             : null}
           <Header />
           <Main>
-            <ItemsList data={beers}
+            <ItemsList
+              data={beers}
               showModal={this.showModal} />
             {isLoading ? <Spinner /> : null}
           </Main>
         </Wrapper>
         {isEndOfData ?
           <>
-            <H3 center>koniec</H3>
+            <H3 center>koniec...</H3>
             <Footer />
           </>
           : null}
-
       </ThemeProvider >
     );
   }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Styled from './Styled'
+import S from './Styled'
 import SimilarItems from '../SimilarItems'
 import noimage from '../../img/noimage.jpg'
 import { H4 } from '../../GlobalElements'
@@ -8,7 +8,7 @@ const Modal = ({ hideModal, itemData, showModal }) => {
 
   const renderFoodList = () => {
     return food_pairing.map((item, index) => {
-      return <Styled.FoodItem key={index}>{item}</Styled.FoodItem>
+      return <S.FoodItem key={index}>{item}</S.FoodItem>
     })
   }
 
@@ -19,33 +19,33 @@ const Modal = ({ hideModal, itemData, showModal }) => {
   }
   console.log(itemData);
   return (
-    <Styled.ModalBack onClick={(e) => hideModal(e)}>
-      <Styled.ModalFront>
-        <Styled.ImageWrapper>
-          <Styled.Image src={image_url || noimage} alt="bee" />
-        </Styled.ImageWrapper>
+    <S.ModalBack onClick={(e) => hideModal(e)}>
+      <S.ModalFront>
+        <S.ImageWrapper>
+          <S.Image src={image_url || noimage} alt="bee" />
+        </S.ImageWrapper>
 
-        <Styled.Content>
-          <Styled.Title>{name}</Styled.Title>
-          <Styled.Subtitle>{tagline}</Styled.Subtitle>
-          <Styled.Features>
+        <S.Content>
+          <S.Title>{name}</S.Title>
+          <S.Subtitle>{tagline}</S.Subtitle>
+          <S.Features>
             <H4>IBU: <span>{ibu}</span></H4>
             <H4>ABV: <span>{abv}</span></H4>
             <H4>EBC: <span>{ebc}</span></H4>
-          </Styled.Features>
-          <Styled.Text>
+          </S.Features>
+          <S.Text>
             {description}
-          </Styled.Text>
+          </S.Text>
           <H4>Best served with</H4>
-          <Styled.FoodList>
+          <S.FoodList>
             {renderFoodList()}
-          </Styled.FoodList>
-        </Styled.Content>
+          </S.FoodList>
+        </S.Content>
         <SimilarItems
           features={features}
           showModal={showModal} />
-      </Styled.ModalFront>
-    </Styled.ModalBack>
+      </S.ModalFront>
+    </S.ModalBack>
   )
 }
 

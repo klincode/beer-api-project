@@ -1,13 +1,13 @@
 import React from 'react';
-import Styled from './Styled'
-import { H2, H4 } from '../../GlobalElements'
+import S from './Styled'
+
 const Footer = () => {
   return (
-    <Styled.Footer>
+    <S.Footer>
       <span>
         Beer Guru 2020
       </span>
-    </Styled.Footer>
+    </S.Footer>
   )
 }
 

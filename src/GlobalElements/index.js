@@ -6,6 +6,7 @@ import { H4 } from './H4'
 import { Main } from './Main'
 import { HeadLine } from './HeadLine'
 import { SpanColor } from './SpanColor'
+import { breakPoints } from './breakPoints'
 
 
-export { A, H1, H2, H3, H4, Main, SpanColor, HeadLine }
+export { A, H1, H2, H3, H4, Main, SpanColor, HeadLine, breakPoints }

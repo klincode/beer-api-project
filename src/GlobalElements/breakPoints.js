@@ -1,4 +1,4 @@
-export const breakPoint = {
+export const breakPoints = {
   smallDevice: '(max-width: 576px)',
   mediumDevice: '(max-width: 768px)',
   largeDevice: '(max-width: 992px)',

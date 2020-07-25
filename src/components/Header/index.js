@@ -1,15 +1,14 @@
 import React from 'react';
-import Styled from './Styled'
+import S from './Styled'
 import { SpanColor, H1 } from '../../GlobalElements'
 
 const Header = () => {
   return (
-    <Styled.Header>
+    <S.Header>
       <H1>
-        <SpanColor>Beer</SpanColor>
-        Guru
+        <SpanColor>Beer</SpanColor>Guru
       </H1>
-    </Styled.Header>
+    </S.Header>
   )
 }
 

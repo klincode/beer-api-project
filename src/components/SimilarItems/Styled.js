@@ -1,21 +1,17 @@
 import styled from 'styled-components'
 import { H4 } from '../../GlobalElements'
 
-
-const ItemsList = styled.div`
-display: flex;
-flex-wrap:wrap;
-width:100%;
-height:250px;
-padding:20px;
-/* margin:0 auto; */
-justify-content:space-between;
-align-content: flex-start
-
-`
-
-const Item = styled.div`
- /* flex: 1 0 100%; */
+const S = {
+  ItemsList: styled.div`
+  display: flex;
+  flex-wrap:wrap;
+  width:100%;
+  height:250px;
+  padding:20px;
+  justify-content:space-between;
+  align-content: flex-start
+`,
+  Item: styled.div`
   height:90%;
   min-height:175px;
   position:relative;
@@ -31,43 +27,34 @@ const Item = styled.div`
     transform:scale(1.1);
     cursor:pointer;
   }
-`
-const Title = styled(H4)`
+  `,
+
+  Title: styled(H4)`
   position:absolute;
   bottom:0px;
   margin:0;
   left:50%;
   transform:translateX(-50%);
-  bottom:10px;
+  bottom:0px;
   width:100%;
+  `,
+
+  ImageWrapper: styled.div`
+  height:250px;
+  margin-bottom:50px;
+  `,
+
+  Image: styled.img`
+  max-width:50%;
+  max-height:50%;
+  object-fit:cover;
+`,
+
+  Header: styled(H4)`
+  margin:0;
+  flex-basis:100%;
+  padding:10px 0;
 `
-
-const ImageWrapper = styled.div`
-height:250px;
-  `;
-
-const Image = styled.img`
-    max-width:50%;
-    max-height:50%;
-    object-fit:cover;
-  
-`
-const Header = styled(H4)`
-margin:0;
-flex-basis:100%;
-padding:10px 0;
-/* height:20px; */
-
-`
-const Styled = {
-  Item,
-  ItemsList,
-  Title,
-  Header,
-  Image,
-  ImageWrapper
-
 }
 
-
-export default Styled;
+export default S;

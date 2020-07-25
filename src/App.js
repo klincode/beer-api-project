@@ -84,7 +84,7 @@ class App extends Component {
 
   }
   render() {
-    const { beers, isModalVisible, itemData, isEndOfData } = this.state;
+    const { beers, isModalVisible, itemData, isEndOfData, isLoading } = this.state;
 
     console.log(this.state.scrollPosition);
     return (
@@ -99,10 +99,9 @@ class App extends Component {
             : null}
           <Header />
           <Main>
-            {beers ?
-              <ItemsList data={beers}
-                showModal={this.showModal} />
-              : <Spinner />}
+            <ItemsList data={beers}
+              showModal={this.showModal} />
+            {isLoading ? <Spinner /> : null}
           </Main>
         </Wrapper>
         {isEndOfData ?

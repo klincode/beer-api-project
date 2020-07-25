@@ -1,34 +1,32 @@
 import styled from 'styled-components';
 import { breakPoint } from '../../theme/breakPoints'
 import { H2, H3 } from '../../GlobalElements'
-const ImageWrapper = styled.div`
+
+const S = {
+  ImageWrapper: styled.div`
   padding:5px;
   height:250px;
   @media ${breakPoint.mediumDevice} {
     height:350px;
   }
-  `;
-
-const Image = styled.img`
+  `,
+  Image: styled.img`
 max-width:100%;
 height:100%;
 object-fit:cover;
-`;
-const Info = styled.div`
+`,
+  Info: styled.div`
 position:absolute;
 bottom:10px;
 left:50%;
 transform:translateX(-50%);
 width:100%;
-`
-const Title = styled(H2)`
-`
-
-const Subtitle = styled(H3)`
-`;
-
-
-const Item = styled.div`
+`,
+  Title: styled(H2)`
+`,
+  Subtitle: styled(H3)`
+`,
+  Item: styled.div`
   position:relative;
   flex-basis:30%;
   border-radius:5px;
@@ -50,10 +48,11 @@ const Item = styled.div`
     min-height:450px;
   }
 `
-
-
-const Styled = {
-  Image, Subtitle, Title, Item, Info, ImageWrapper
 }
 
-export default Styled;
+
+// const Styled = {
+//   Image, Subtitle, Title, Item, Info, ImageWrapper
+// }
+
+export default S;

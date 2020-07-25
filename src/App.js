@@ -3,7 +3,7 @@ import GlobalStyle from './theme/GlobalStyle'
 import { ThemeProvider } from 'styled-components';
 import Switch from "react-switch";
 import { themeLight, themeDark } from './theme/Themes';
-import { Main, H3 } from './GlobalElements';
+import { Main, H3 } from './globalElements';
 import ItemsList from './components/ItemsList';
 import Wrapper from './components/Wrapper';
 import Header from './components/Header';
@@ -42,10 +42,6 @@ class App extends Component {
   setSelectedItemData = (data) => {
     this.setState({ itemData: data });
   }
-  showModal = (data) => {
-    this.setState({ isModalVisible: true })
-    this.setSelectedItemData(data);
-  }
   infiniteScroll = () => {
     const scroll = document.body.scrollTop || document.documentElement.scrollTop;
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -58,6 +54,10 @@ class App extends Component {
       })
       this.getData(this.state.page)
     }
+  }
+  showModal = (data) => {
+    this.setState({ isModalVisible: true })
+    this.setSelectedItemData(data);
   }
   hideModal = (e) => {
     e.stopPropagation();

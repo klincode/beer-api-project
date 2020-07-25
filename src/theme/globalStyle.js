@@ -11,6 +11,7 @@ body {
   background-color:${props => props.theme.backgroundColor};
   color:${props => props.theme.secondaryColor};
   font-size:14px;
+  transition:background-color 0.7s;
 }
 * {
   box-sizing: border-box;
